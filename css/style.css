@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+    background-color: #d5d5e5;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    position: relative;
+}
+
+.background-card {
+    position: absolute;
+    top: 4%;
+    left: 5%;
+    width: 300px;
+    max-width: 100%;
+    max-height: 100%;
+    height: 555px;
+    background-color: #ffffff9e;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.492);
+}
+
+.container {
+    position: relative;
+    background-color: #FFFFFF;
+
+    width: 300px;
+    height: 600px;
+    max-width: 100%;
+    border-radius: 30px;
+
+    display: flex;
+    flex-direction: column;
+    z-index: 2000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.492);
+
+    overflow: hidden; /* Prevent overflow from breaking layout */
+}
+
+.to-do-list .instructional-message{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-top: 30%
+    /* text-align: center;
+    margin-left: auto;
+    margin-right: auto; */
+}
+
+.to-do-list .instructional-message img{
+    opacity: 0.2;
+}
+
+
+h5 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 0.8rem;
+    color: #8A8AAA;
+    margin-left: 40px;
+}
+
+.section-1 h5 span {
+    text-decoration: underline;
+}
+
+.uncompleted-list,
+.completed-list {
+    list-style-type: none;
+    margin-left: 20px;
+    padding-right: 10px;
+}
+
+.uncompleted-list {
+    max-height: 450px; /* Set a maximum height for the list */
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds height */
+}
+
+.completed-list {
+    max-height: 450px; /* Set a maximum height for the list */
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds height */
+}
+
+.rounded-checkbox {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid black;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.rounded-checkbox:checked {
+    appearance: auto;
+    clip-path: circle(50% at 50% 50%);
+    background-color: #3B3B71;
+}
+
+.uncompleted-list .text-input {
+    height: 30px;
+    font-size: 1rem;
+    color: #3B3B71;
+}
+
+.completed-list .text-input {
+    height: 30px;
+    font-size: 1rem;
+    color: #8A8AAA;
+}
+
+.menu {
+    position: absolute;
+    top: 5%;
+    left: 70%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.main-heading {
+    margin-left: 40px;
+}
+
+.main-heading h1 {
+    margin-top: 40px;
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    font-style: normal;
+    color: #3B3B71;
+}
+
+.main-heading p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 0.8rem;
+    color: #8A8AAA;
+}
+
+.add-btn {
+    top: 85%;
+    left: 70%;
+    max-width: 100%; /* Ensures it doesn't exceed container's width */
+    max-height: 100%; /* Ensures it doesn't exceed container's height */
+    position: absolute;
+    background-color: #3B3B71;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.492);
+}
+
+.btn-add img {
+    width: 50%; /* or any specific value like 200px */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
