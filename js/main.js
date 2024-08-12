@@ -7,18 +7,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const toDoListContainer = document.querySelector('.to-do-list');
     // Selects the container where the to-do sections and list items will be appended.
 
-    let placeholderElement;
 
+
+    let placeholderElement;
+    // Function declaration (functions in JavaScript are objects themselves)
     function placeholdertext(){
+
+        // Creating new HTML elements (these are objects in the DOM)
         placeholderElement = document.createElement("div");
-        addImageBackground = document.createElement("img")
+        const addImageBackground = document.createElement("img");
+
+        // Setting properties on the placeholderElement object
         placeholderElement.className = "instructional-message";
+
+        // Using methods to modify the addImageBackground object
         addImageBackground.setAttribute('src', 'images/add-circle-background.png');
         addImageBackground.setAttribute('alt', 'backgroundimage');
+
+        // Adding the addImageBackground object as a child to placeholderElement
         placeholderElement.appendChild(addImageBackground);
+
+        // Adding the placeholderElement object as a child to the toDoListContainer
         toDoListContainer.appendChild(placeholderElement);
     }
 
+    // Calling the function (which is an object) to execute its code
     placeholdertext();
 
 
