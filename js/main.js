@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
         listItem.appendChild(textInput);
         // Adding the checkbox and text input to the list item container.
 
-        ulElement.appendChild(listItem);
+        ulElement.prepend(listItem);
         // Appending the list item to the provided unordered list element (either uncompleted or completed list).
         // These listItems in li are dynamic. they only need to be there when a click event happens i.e only when we are adding a new list item and the list items will need to dissapear from our list once we have checked the list item as completed and be moved to the completed list items section
 
@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function removeFromCompleted(listItem) {
         // Function to remove a to-do item from the completed list.
-
+        const uncompletedList = document.querySelector(".uncompleted-list")
         const completedList = document.querySelector('.completed-list');
         const completedCountSpan = document.querySelector('.section-2 h5 span');
 
@@ -198,6 +198,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const completedCount = completedList.children.length;
         completedCountSpan.textContent = `(${completedCount})`;
         // Updates the completed count in the heading.
+
+        const uncompletedCount = uncompletedList.children.length;
+        // Get the count of remaining items in the uncompleted list.
+        
+        // Check if both the completed count is zero and the uncompleted count is zero
+        if (completedCount === 0 && uncompletedCount === 0) {
+            location.reload(); // Reload the DOM when both lists are empty
+        }
     }
 
     addButton.addEventListener('click', () => {
