@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const toDoListContainer = document.querySelector('.to-do-list');
     // Selects the container where the to-do sections and list items will be appended.
 
+    
 
     let placeholderElement;
     // Function Objective
