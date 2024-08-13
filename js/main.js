@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     let placeholderElement;
+    // Function Objective
     // Function declaration (functions in JavaScript are objects themselves)
     function placeholdertext(){
 
@@ -36,9 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     function createToDoSection() {
+        //Function objective
         // Function to create the main to-do sections: one for uncompleted tasks and one for completed tasks.
         
         /*******************CREATE HTML TAGS*********************** */
+        //Objects referencing methods
         const section1 = document.createElement('section');
         const heading1 = document.createElement('h5');
         const span1 = document.createElement('span');
@@ -50,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const ul2 = document.createElement('ul');
 
         /*****CREATE CLASS ATTRIBUTES AND CONTENT INSIDE HTML TAGS******* */
+        // Object referencing properties
         section1.className = 'section-1';
         heading1.textContent = 'shared with ';
         span1.textContent = '1 person';
@@ -64,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         /**** ASSIGN CHILD ELEMENTS INTO REPSECTIVE PARENT CONTAINERS*****/
+        //Objects referencing methods
         heading1.appendChild(span1);
         heading2.appendChild(span2);
         // Appending the span elements to their respective headings.
@@ -81,49 +86,84 @@ document.addEventListener('DOMContentLoaded', () => {
         // Appending both sections to the main container for to-do lists.
 
         createListItem(ul1);
-        // Automatically creates the first to-do list item in the uncompleted list section.
+        // we are calling the  createListItem function in the createtodo section which then Automatically creates the first to-do list item in the uncompleted list section.
     }
 
     function createListItem(ulElement) {
-        // Function to create individual to-do list items, including a checkbox and a text input.
+        // Function Objective
+        // Function to create individual to-do *LIST* items (li tags), including a *CHECKBOX* (input tag) and a *TEXT INPUT* (input tag). also we are creating an event listener method for the *CHECKBOX* so that if the checkbox is checked, the item is moved to the completed list
 
+
+        /*******************CREATE HTML TAGS*********************** */
+        //Objects referencing methods
         const listItem = document.createElement('li');
         const checkbox = document.createElement('input');
         const textInput = document.createElement('input');
-
+        
+        /*****CREATE CLASS ATTRIBUTES INSIDE HTML TAGS******* */
+        // Object referencing properties
         checkbox.type = 'checkbox';
         checkbox.className = 'rounded-checkbox';
         textInput.type = 'text';
         textInput.className = 'text-input';
         // Setting up the checkbox and text input for the to-do item.
 
+        // Adding placeholder text
+        textInput.placeholder = 'Write your task here...';
+        textInput.style.color = "#3B3B71"
+        // Setting up the checkbox and text input for the to-do item.
+
+        
+
+        /**** ASSIGN CHILD ELEMENTS INTO REPSECTIVE PARENT CONTAINERS*****/
+        //Objects referencing methods
         listItem.appendChild(checkbox);
         listItem.appendChild(textInput);
-        // Adding the checkbox and text input to the list item.
+        // Adding the checkbox and text input to the list item container.
 
         ulElement.appendChild(listItem);
         // Appending the list item to the provided unordered list element (either uncompleted or completed list).
+        // These listItems in li are dynamic. they only need to be there when a click event happens i.e only when we are adding a new list item and the list items will need to dissapear from our list once we have checked the list item as completed and be moved to the completed list items section
 
+        // Automatically focus the text input field to show the blinking cursor
+        textInput.focus();
+ 
+
+        // Adds an event listener to the checkbox. If the checkbox is checked, the item is moved to the completed list.
         checkbox.addEventListener('change', function() {
             if (this.checked) {
-                moveToCompleted(listItem);
+                moveToCompleted(listItem); // here we are calling the movetocompleted function  another function that will be able to perform the click action action that we want to do
             }
         });
-        // Adds an event listener to the checkbox. If the checkbox is checked, the item is moved to the completed list.
-    }
+
+    }     
 
     function moveToCompleted(listItem) {
+        //Function Objective
         // Function to move a to-do item to the completed list when the checkbox is checked.
+        // to count the number of items currently present in the completed list and display the result
+        
+        //What data do we need to accomplish this ?
+        //What form does that data take ? html elements
 
+        //DATA to be collected
         const completedList = document.querySelector('.completed-list');
+        // container to house the individual completed list items.
         const completedCountSpan = document.querySelector('.section-2 h5 span');
+        // the exact element which will shouw the number of items in the completed list.
         const textInput = listItem.querySelector('.text-input');
+        // the elemnent which houses the content to be moved.
+        
 
+        //Action to be performed
+        //Purpose: The if statement checks if the user has not entered any meaningful text in the textInput field.
         if (textInput.value.trim() === '') {
             // Prevents moving an item to the completed list if the text input is empty.
 
             listItem.querySelector('.rounded-checkbox').checked = false;
+            // for the selected list item (li), set its child element(.rounded-checkbox (input)) checkbox property to false.
             alert('Please enter a task before marking it as complete.');
+            // create an alert message on the browser notifying the user on the action to take
             return;
         }
 
@@ -140,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         listItem.querySelector('.rounded-checkbox').addEventListener('change', function() {
             if (!this.checked) {
-                removeFromCompleted(listItem);
+                removeFromCompleted(listItem); //calling the removefromcompleteed function in the movetocompleted function
             }
         });
         // Adds an event listener to the checkbox within the completed list. If unchecked, the item is removed from the completed list.

@@ -123,12 +123,14 @@ h5 {
     height: 30px;
     font-size: 1rem;
     color: #3B3B71;
+    border: none;
 }
 
 .completed-list .text-input {
     height: 30px;
     font-size: 1rem;
     color: #8A8AAA;
+    border: none;
 }
 
 .menu {
