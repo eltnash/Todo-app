@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // for the selected list item (li), set its child element(.rounded-checkbox (input)) checkbox property to false.
             alert('Please enter a task before marking it as complete.');
             // create an alert message on the browser notifying the user on the action to take
-            // return;
+            return;
         }
 
         listItem.remove();
